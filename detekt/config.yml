@@ -1,0 +1,36 @@
+# See  https://raw.githubusercontent.com/detekt/detekt/master/detekt-core/src/main/resources/default-detekt-config.yml for defaults
+complexity:
+  TooManyFunctions:
+    thresholdInFiles: 20
+    thresholdInClasses: 20
+    thresholdInInterfaces: 20
+    thresholdInObjects: 20
+  NestedBlockDepth:
+    threshold: 5
+  LongParameterList:
+    active: false
+
+performance:
+  SpreadOperator:
+    active: false
+
+empty-blocks:
+  EmptyFunctionBlock:
+    active: false
+
+
+exceptions:
+  TooGenericExceptionCaught:
+    active: false
+
+style:
+  ForbiddenComment:
+    active: false
+  MaxLineLength:
+    active: false
+  MagicNumber:
+    active: false
+  UseIfInsteadOfWhen:
+    active: false
+  ThrowsCount:
+    active: false

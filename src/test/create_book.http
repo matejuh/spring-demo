@@ -1,0 +1,27 @@
+### Create book
+# @name Create book
+POST http://localhost:9000/books
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Blood of Elves",
+  "author": "Andrzej Sapkowski"
+}
+
+> {%
+  client.test("Request executed successfully", function() {
+     client.assert(response.status === 201, "Response status is not 201");
+  });
+  client.global.set("location", response.headers.valuesOf("Location")[0])
+%}
+
+### Get book
+# @name Get book
+GET http://localhost:9000/{{location}}
+
+> {%
+  client.test("Request executed successfully", function() {
+     client.assert(response.status === 200, "Response status is not 200");
+  });
+%}
